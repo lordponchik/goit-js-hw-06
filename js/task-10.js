@@ -10,14 +10,12 @@ const createBtn = controlsEl.querySelector('button[data-create]');
 const destroyBtn = controlsEl.querySelector('button[data-destroy]');
 const boxesEl = document.querySelector('#boxes');
 
-let sizeBox = 30;
-
 createBtn.addEventListener('click', () => {
   createBoxes(inputEl.value);
 });
 destroyBtn.addEventListener('click', destroyBoxes);
 
-inputEl.addEventListener('input', event => {
+inputEl.addEventListener('blur', event => {
   const input = event.currentTarget;
 
   if (!Number(input.value) || Number(input.value) < input.min) {
@@ -28,6 +26,7 @@ inputEl.addEventListener('input', event => {
 });
 
 function createBoxes(amount) {
+  let sizeBox = 30;
   let renderBoxes = '';
 
   for (let i = 1; i <= amount; i += 1) {
@@ -36,10 +35,10 @@ function createBoxes(amount) {
   }
 
   boxesEl.insertAdjacentHTML('beforeend', renderBoxes);
+  inputEl.value = '';
 }
 
 function destroyBoxes() {
   boxesEl.innerHTML = '';
-  sizeBox = 30;
   inputEl.value = '';
 }
