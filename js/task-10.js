@@ -18,10 +18,9 @@ destroyBtn.addEventListener('click', destroyBoxes);
 inputEl.addEventListener('blur', event => {
   const input = event.currentTarget;
 
-  if (!Number(input.value) || Number(input.value) < input.min) {
-    input.value = input.min;
-  } else if (Number(input.value) > input.max) {
-    input.value = input.max;
+  if (!Number(input.value) || Number(input.value) < input.min || Number(input.value) > input.max) {
+    alert(`Разрешен ввод чисел только с 1 до 100.`);
+    input.value = '';
   }
 });
 
