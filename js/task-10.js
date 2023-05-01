@@ -28,7 +28,7 @@ function createBoxes(amount) {
   let sizeBox = 30;
   let renderBoxes = '';
 
-  for (let i = 1; i <= amount; i += 1) {
+  for (let i = 1; i <= amount; i += Number(inputEl.step)) {
     renderBoxes += `<div style="width: ${sizeBox}px; height: ${sizeBox}px; background-color: ${getRandomHexColor()};"></div>`;
     sizeBox += 10;
   }
