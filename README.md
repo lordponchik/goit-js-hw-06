@@ -1,5 +1,5 @@
 # Homework / Домашнее задание :clipboard:
-## goit-js-hw-07
+## goit-js-hw-06
 :us:
 <details>
 	<summary>English</summary>
